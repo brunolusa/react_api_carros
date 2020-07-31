@@ -1,38 +1,17 @@
 import React, { Component } from 'react';
-import api from './api';
+import Header from './components/Header';
+import CarroBox from './components/Carros';
 
-class App extends Component{
-  state= {
-    carro: [],
-  }
-
-  async componentDidMount(){
-    const response = await api.get('');
-    this.setState({carro: response.data});
-  }
-
-  render(){
-
-    const { carro } =this.state;
-
-    return(
-      <div>
-        <h1>Lista de Carros</h1>
-        {console.log(carro)}
-        {carro.map(c => (
-          <li key={c.id} >
-            <h2>
-              Marca:
-              {c.marca}
-              {c.modelo}
-              {c.id}
-            </h2>
-          </li>
-        ))}
+class App extends Component {
+  render() {
+    return (
+      <div className="container">
+        <Header title="Carros App" />
+        <br />
+        <CarroBox />
       </div>
     );
   }
-
 }
 
 export default App;
