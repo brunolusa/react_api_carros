@@ -28,7 +28,7 @@ class FormCarro extends Component {
     }
 
     create = () => {
-        this.setState({ model: { id: 0,  description: '', price: 0, quantity: 0 } })
+        this.setState({ model: { id: 0,  marca: '', modelo: '' } })
         this.props.carroCreate(this.state.model);
     }
 
