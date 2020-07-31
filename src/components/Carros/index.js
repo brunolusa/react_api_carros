@@ -53,7 +53,7 @@ class FormCarro extends Component {
                             onChange={e => this.setValues(e, 'modelo') } />
                     </div>
                 </FormGroup>
-                <Button color="primary" block onClick={this.create}> Gravar </Button>
+                <Button id="save" color="primary" block onClick={this.create}> Gravar </Button>
             </Form>
         );
     }
@@ -86,8 +86,8 @@ class ListCarro extends Component {
                                 <td>{carro.marca}</td>
                                 <td>{carro.modelo}</td>
                                 <td>
-                                    <Button color="info" size="sm" onClick={e => this.onEdit(carro)}>Editar</Button>
-                                    <Button color="danger" size="sm" onClick={e => this.delete(carro.id)}>Deletar</Button>
+                                    <Button color="info" id="edit" size="sm" onClick={e => this.onEdit(carro)}>Editar</Button>
+                                    <Button color="danger" id="delete" size="sm" onClick={e => this.delete(carro.id)}>Deletar</Button>
                                 </td>
                             </tr>
                         ))
