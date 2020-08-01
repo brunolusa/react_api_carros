@@ -135,6 +135,14 @@ export default class CarroBox extends Component {
 
         if(data.id === 0) {
             // CREATE NEW CARRO
+            if(carro.marca === ''){
+                this.setState({ carro, message: { text: 'Marca não informada!', alert: 'danger' } });
+                return;
+             }
+             if(carro.modelo === ''){
+                this.setState({ carro, message: { text: 'Modelo não informado!', alert: 'danger' } });
+                return;
+             }
             fetch(this.Url, requestInfo)
             .then(response => response.json())
             .then(newCarro => {
